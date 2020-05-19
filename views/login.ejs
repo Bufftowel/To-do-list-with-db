@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title title="To Do list">To do List</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/style2.css">
+    </head>
+    <body>
+        <div id="formContainer">
+            <form action="/login" method="POST">
+                <div id="choice">
+                    <input type="radio" name="choice" id="signup">
+                    <label for="signup">SignUp</label>
+                    <input type="radio" name="choice" id="login">
+                    <label for="login">Login</label>
+                </div>
+                <div>
+                    <label for="username">username : </strong></label>
+                    <span class="barbox">
+                        <input type="text" id="username" name="username" required autocomplete="off">
+                        <span class="bar"></span>
+                    </span>
+                </div>
+                <div>
+                    <label for="password">Password : </label>
+                    <span class="barbox">
+                        <input type="password" name="password" id="password" required>
+                        <span class="bar"></span>
+                    </span>
+                </div>
+                <% if(err) { %>
+                    <div><p><%= err %></p></div>
+                <% } %>
+                <div>
+                    <input type="submit" value="Login">
+                </div>
+            </form>
+        </div>
+        <script type="text/javascript">
+            let form = document.querySelector("form");
+            let btn = document.querySelector('input[type="submit"]');
+            let sg = document.querySelector("#signup + label");
+            let lg = document.querySelector("#login + label");
+            lg.addEventListener("click", () => {
+                form.setAttribute("action", "/login");
+                btn.setAttribute("value", "Login");
+                lg.style.background = "white";
+                sg.style.background = "var(--col-form)";
+            });
+            sg.addEventListener("click", () => {
+                form.setAttribute("action", "/signup");
+                btn.setAttribute("value", "SignUp");
+                sg.style.background = "white";
+                lg.style.background = "var(--col-form)";
+            });
+        </script>
+    </body>
+</html>

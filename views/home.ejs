@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>To do List</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/style.css">
+    </head>
+    <body>
+        <nav>
+            <h1>To Do List</h1>
+            <div>   
+                <button><%= user %></button>
+                <button id="chngpass">Change Password</button>
+                <div id="formContainer2">
+                    <form action="/changepass" method="POST">
+                        <div>
+                            <span>Old Password:</span>
+                            <span class="barbox">
+                                <input type="password" name="oldpass" required>
+                                <span class="bar"></span>
+                            </span>
+                        </div>
+                        <div>
+                            <span>New Password:</span>
+                            <span class="barbox">
+                                <input type="password" name="newpass1" required>
+                                <span class="bar"></span>
+                            </span>
+                        </div>
+                        <div>
+                            <span>Confirm Password:</span>
+                            <span class="barbox">
+                                <input type="password" name="newpass2" required>
+                                <span class="bar"></span>
+                            </span>
+                        </div>
+                        <div class="popupbuttons">
+                            <button type="button" id="cancel" onclick="closepopup2()">Cancel</button>
+                            <input type="submit" value="Change Password">
+                        </div>
+                    </form>
+                </div>
+                <a href="/logout">Log out</a>
+            </div>
+        </nav>
+        <button class="btn" id="add-task" title="Add New Task"><span></span><span></span></button>
+        <div id="tasks">
+            <% if(tasks.length === 0)  {%>
+                <h2>No Tasks added yet!</h2>    
+            <% } %>  
+            <% for(let i = 0; i < tasks.length; i++) { %>
+                <div>
+                    <div>
+                        <h2>
+                            <span><%= tasks[i].task %></span>
+                            <% if(tasks[i].link) { %>
+                                <span class="verBar"></span><span> <a href="<%= tasks[i].link %>">Link</a></span> 
+                            <% } %>  
+                        </h2>
+                        <form action="/del" method="POST"><button class="btn" value="<%=tasks[i].id%>" name="id">Done!</button></form>
+                    </div>
+                    <hr/>
+                        <div class="desc">
+                            <% if(tasks[i].description) {%>
+                                <p><%- tasks[i].description %></p>
+                            <% } else {%> 
+                                <p>No description provided.</p>
+                            <% } %>
+                            <p><strong>Priority : <%= tasks[i].priority %></strong> </p>
+                        </div>
+                    </div>
+            <% } %>
+        </div>
+        <div id="formContainer">
+            <form action="/data" method="POST">
+                <div>
+                    <label for="title">Title : </strong></label>
+                    <span class="barbox">
+                        <input type="text" id="title" name="title" required>
+                        <span class="bar"></span>
+                    </span>
+                </div>
+                <div>
+                    <label for="description">Description: </label> <br/>
+                    <textArea rows=8 cols=30 name="description" id="description" placeholder="Description about Task"></textArea>
+                </div>
+                <div>
+                    <label for="link">Link : </label>
+                    <span class="barbox">
+                        <input type="url" name="link" id="link">
+                        <span class="bar"></span>
+                    </span>
+                </div>
+                <div>
+                    <label for="priority">Priority : </label>
+                    <input type="range" name="priority" id="priority" value="3" min="1" max="10">
+                </div>
+                <div class="popupbuttons">
+                    <button type="button" id="cancel" onclick="closepopup()">Cancel</button>
+                    <input type="submit" value="Add">
+                </div>
+            </form>
+        </div>
+        <script type="text/javascript" src="/index.js"></script>
+    </body>
+</html>

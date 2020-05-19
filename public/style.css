@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Roboto&display=swap');
+
+body {  
+    font-family: 'Roboto', sans-serif;;
+    background: #f8f8f8;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#formContainer form, #formContainer2 form {
+    display: block;
+    margin: auto auto;
+    background: rgb(251, 252, 253);
+    border-radius: 10px;
+    border: none;
+    box-shadow: 3px 5px 12px rgba(3, 2, 6, 0.2);
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+}
+
+.popupbuttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+label {
+    padding-right: 25px;
+}
+
+#formContainer, #formContainer2 {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(251, 252, 253, 0.6);
+    transition: all 500ms;
+    overflow: hidden;
+}
+
+select {
+    border-radius: 5px;
+    outline: none;
+    border: 0;
+}
+input[type="submit"] {
+    padding: 7px 15px;
+    background-color: rgb(103, 19, 158);
+    color: white;
+    transition: all 300ms ease-in-out;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    margin-left: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(113, 31, 168);
+    box-shadow: 3px 3px 3px rgba(3, 9, 4, 0.3);
+}   
+form input, form textarea, #cancel {
+    border-radius: 5px;
+    border: 0;
+    outline: none;
+    background: rgb(242, 242, 242);
+    padding-left: 5px;
+}
+
+form input[type="text"], form input[type="password"] {
+    min-height: 22px;
+}
+
+input[type="url"], input[type="text"], form textarea {
+    min-height: 25px;
+    min-width: 200px;
+}
+
+form div {
+    margin: 20px;
+}
+
+label {
+    font-style: oblique;
+}
+
+#cancel {
+    color: rgb(103, 19, 158);
+    padding: 7px 15px;
+    border: 1px solid rgb(190, 190, 190);
+    transition: all 300ms ease-in-out;
+}
+#cancel:hover {
+    box-shadow: 3px 3px 3px rgba(3, 9, 4, 0.3);
+    background: rgb(235, 235, 235);
+}
+
+.barbox {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#title {
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+}
+.bar {
+    width: 0;
+    display: block;
+    border: 0;
+    align-self: center;
+    transition: width 250ms;
+    border-bottom: 2px solid rgb(103, 19, 158);
+}
+input:focus + .bar {
+    width: 100%;
+}
+
+.btn {
+    border: none;
+    padding: 8px 17px;
+    background: rgb(26, 115, 232);
+    border-radius: 5px;
+    color: #f8f8f8;
+    outline: none;
+    transition: all 300ms ease-in-out;
+}
+
+.btn:hover {
+    background: rgb(41, 126, 238);
+    box-shadow: 3px 3px 4px rgba(3, 2, 6, 0.2);
+}
+
+.btn:hover {
+    background: rgb(41, 126, 238);
+    box-shadow: 3px 3px 4px rgba(3, 2, 6, 0.2);
+}
+
+nav {
+    width: 100%;
+    background: white;
+    height: 70px;
+    box-shadow: 6px 7px 10px rgba(3, 2, 6, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 7px;
+    box-sizing: border-box;
+}
+
+nav > div > a, nav > div > button {
+    margin: 10px;
+    background: rgb(26, 115, 232);
+    border-radius: 5px;
+    border: 2px solid rgb(26, 115, 232);
+    color: white;
+    outline: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+}
+
+nav > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+nav > div > a:hover, nav > div > button:hover {
+    color: rgb(26, 115, 232);
+    background: #f8f8f8;
+}
+
+nav > h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.7rem;
+    color: rgb(0, 0, 0);
+    text-shadow: 3px 3px 2px rgba(3, 2, 6, 0.3);
+}
+
+#tasks {
+    width: 90vw;
+    background: white;
+    box-shadow: 2px 2px 10px rgba(3, 2, 6, 0.2);
+    align-self: center;
+    margin: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+#tasks > div {
+    width: 85%;
+    margin: 10px;
+    padding: 10px 20px;
+}
+
+#tasks > div > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+#tasks > div > div > a {
+    align-self: center;
+    margin: 0;
+}
+
+#tasks > div > div  h2 {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+#tasks > div > div  > h2 span {
+    margin-right: 10px;
+}
+#tasks > div > div  > h2 span.tasktitle {
+    width: 200px;
+    word-break: break-all;
+    white-space: normal;
+}
+
+#add-task {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 70px;
+    height: 70px;;
+    border-radius: 50%;
+}
+
+#add-task > span {
+    display: inline-block;
+    width: 60%;
+    height: 5px;
+    position: absolute;
+    top: 47%;
+    left: 20%;
+    background: white;
+    border-radius: 3px;
+}
+
+#add-task > span + span{
+    display: inline-block;
+    width: 5px;
+    height: 60%;
+    position: absolute;
+    top: 20%;
+    left: 46%;
+    background: white;
+    border-radius: 3px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.verBar {
+    display: inline-block;
+    height: 100%;
+    width: 2px;
+    background: rgb(160, 154, 154);
+}
+
+input[type=range] {
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 100%; /* Specific width is required for Firefox. */
+    background: transparent; /* Otherwise white in Chrome */
+    background: #d1cfcf;
+    height: 5px;
+    margin-top: 10px;
+    padding: 0;
+    transition: background 250ms;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    background: rgb(81, 238, 120);
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(3, 2, 6, 0.2)
+}
+
+input[type=range]:hover {
+    outline: none; 
+    background: red;
+}
+
+.desc > p:nth-of-type(1) {
+    width: 85%;
+}
+
+.desc > p:nth-of-type(2){
+    color: rgb(192, 0, 0);
+    width: 10%;
+}
+
+.desc {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+}

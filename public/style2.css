@@ -1,0 +1,155 @@
+
+body {
+    margin: 0;
+}
+
+form {
+    display: block;
+    min-width: 300px;
+    min-height: 200px;
+    --col-form: #d3d8e0;
+    background: var(--col-form);
+    border-radius: 10px;
+    border: none;
+    box-shadow: 3px 5px 12px rgba(3, 2, 6, 0.2);
+    transition: all 350ms;
+}
+
+#choice {
+    min-width: 300px;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+}
+
+#buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+label {
+    padding-right: 25px;
+}
+
+#formContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    background: rgba(251, 252, 253, 0.6);
+    transition: all 300ms;
+    overflow: hidden;
+}
+
+
+
+input[type="submit"] {
+    padding: 12px 15px;
+    background-color: rgb(103, 19, 158);
+    color: white;
+    transition: all 300ms ease-in-out;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(113, 31, 168);
+    box-shadow: 3px 3px 3px rgba(3, 9, 4, 0.3);
+}   
+form input{
+    border: 0;
+    outline: none;
+    background: white;
+    padding: 8px;
+    padding-left: 5px;
+}
+
+form div {
+    margin: 20px;
+}
+
+label {
+    font-style: oblique;
+}
+
+.barbox {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#input[type="text"], #input[type="password"] {
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+}
+
+.bar {
+    width: 0;
+    display: block;
+    border: 0;
+    align-self: center;
+    transition: width 250ms;
+    border-bottom: 2px solid rgb(103, 19, 158);
+}
+
+input:focus + .bar {
+    width: 100%;
+}
+
+.btn {
+    border: none;
+    padding: 8px 17px;
+    background: rgb(26, 115, 232);
+    border-radius: 5px;
+    color: #f8f8f8;
+    outline: none;
+    transition: all 300ms ease-in-out;
+}
+
+.btn:hover {
+    background: rgb(41, 126, 238);
+    box-shadow: 3px 3px 4px rgba(3, 2, 6, 0.2);
+}
+
+.btn:hover {
+    background: rgb(41, 126, 238);
+    box-shadow: 3px 3px 4px rgba(3, 2, 6, 0.2);
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"] + label {
+    display: block;
+    padding: 0;
+    width: 50%;
+    text-align: center;
+    padding: 15px;
+}
+
+label[for="signup"] {
+    border-top-left-radius: 10px;
+    transition: all 250ms;
+}
+
+label[for="login"] {
+    border-top-right-radius: 10px;
+    background: white;
+    transition: all 250ms;
+}
+
+p {
+    color: red;
+    margin: 0;
+}

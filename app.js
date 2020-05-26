@@ -9,7 +9,7 @@ let users = new Map();
 require("dotenv").config();
 
 let con = mysql.createConnection({
-    host: "sql12.freemysqlhosting.net", 
+    host: "db4free.net", 
     user: process.env.USER,
     port: 3306,
     password: process.env.PASS,

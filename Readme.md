@@ -3,4 +3,4 @@ Open command line in this directory and run command "node app.js"
 also crearte a table in that database "users" with two varchar(30) column username and password, username being primary key (none of them should be null))
 Website will be hosted at localhost (port : 3000)
 
-A copy is hosted [here](https://to-do-list-with-db.herokuapp.com/).
+A copy is hosted [here](https://to-do-list-with-db.glitch.me/).
